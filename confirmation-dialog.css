@@ -1,0 +1,16 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  /* Change the box model so that hte borders and the paddings are no longer added to the total width or total height that is specified for a box */
+  box-sizing: border-box;
+}
