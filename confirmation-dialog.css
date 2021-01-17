@@ -13,4 +13,24 @@ html {
 body {
   /* Change the box model so that hte borders and the paddings are no longer added to the total width or total height that is specified for a box */
   box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+}
+
+.confirmationHiddenAtStartClass {
+  z-index: 999;
+  width: 100vh;
+  height: 100vh;
+  padding: 5rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmation-dialog {
+
 }
