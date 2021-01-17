@@ -1,0 +1,66 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  /* Change the box model so that hte borders and the paddings are no longer added to the total width or total height that is specified for a box */
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+}
+
+.confirmationHiddenAtStartClass {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+}
+.btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: all 0.2s;
+  position: relative;
+  margin: 0.4rem;
+}
+
+.confirmation-dialog {
+  width: 60rem;
+  max-width: 100%;
+  background-color: white;
+  padding: 3rem;
+  box-shadow: 0 2px 4px #2a2b2d;
+  border-radius: 1.5rem;
+  animation: fadeInBottom 0.5s forwards ease-in-out;
+}
+
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
