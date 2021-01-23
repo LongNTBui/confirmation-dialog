@@ -21,25 +21,33 @@ body {
   padding: 3rem;
 }
 
+.row {
+  width: 1200px;
+  height:90vh;
+  background-color: #777777;
+  position: relative;
+}
+
 .confirmationHiddenAtStartClass {
   top: 0;
   left: 0;
-  position: fixed;
+  position: absolute;
   z-index: 999;
-  width: 100vw;
-  height: 100vh;
+  width: 1200px;
+  height: 90vh;
   display: none;
   align-items: center;
   justify-content: center;
-  background-color: #eee;
+  background-color: #eeeeee;
+  opacity: 0.7;
 }
+
 .btn,
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 0.5rem;
-  transition: all 0.2s;
   position: relative;
   margin: 0.4rem;
 }
@@ -47,17 +55,17 @@ body {
 .confirmation-dialog {
   width: 60rem;
   max-width: 100%;
-  background-color: white;
+  background-color: blueviolet;
   padding: 3rem;
   box-shadow: 0 2px 4px #2a2b2d;
   border-radius: 1.5rem;
-  animation: fadeInBottom 0.5s forwards ease-in-out;
+  animation: fadeInBottom 0.2s ease-in-out;
 }
 
 @keyframes fadeInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem);
+    transform: translateY(2rem);
   }
   100% {
     opacity: 1;

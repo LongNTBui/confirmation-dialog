@@ -1,12 +1,14 @@
 export class ConfirmationDialog {
-  constructor(msg) {
+  constructor(msg, onYesCallback, onCancelCallback) {
     this.msg = msg;
+    this.onYesCallback = onYesCallback;
+    this.onCancelCallback = onCancelCallback;
     this.confirmationDialogContainer = document.createElement("div");
     this.confirmationDialogContainer.className =
       "confirmationHiddenAtStartClass";
     this.confirmationDialogContainer.id = "confirmation-dialog";
 
-    document.body.appendChild(this.confirmationDialogContainer);
+    document.querySelector(".row").appendChild(this.confirmationDialogContainer);
     // create the dialog and add to body
     document.querySelector("#confirmation-dialog").innerHTML =
       '<div class="confirmation-dialog">' +
@@ -39,20 +41,20 @@ export class ConfirmationDialog {
   }
 
   onClickedYes = () => {
-    // Emit an event with the payload
-    const event = new CustomEvent("clickedYes", {
-      detail: "You have clicked yes",
-    });
-    document.dispatchEvent(event);
+    this.onYesCallback();
     this.hideDialog();
   };
 
   onClickedCancel = () => {
-    // Emit an event with the payload
-    const event = new CustomEvent("clickedCancel", {
-      detail: "You have clicked cancel",
-    });
-    document.dispatchEvent(event);
+    this.onCancelCallback();
     this.hideDialog();
   };
+
+  dispatchCustomerEvent(eventName) {
+    // Emit an event with the payload
+    const event = new CustomEvent(eventName, {
+      detail: eventName,
+    });
+    document.dispatchEvent(event);
+  }
 }
